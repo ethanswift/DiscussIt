@@ -13,6 +13,7 @@
 		C0117EF4241E5E2F009C1D42 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0117EF3241E5E2F009C1D42 /* LoginViewController.swift */; };
 		C0117EF6241E5E79009C1D42 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0117EF5241E5E79009C1D42 /* SignUpViewController.swift */; };
 		C0117EF8241EB0BB009C1D42 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0117EF7241EB0BB009C1D42 /* ResetViewController.swift */; };
+		C0117F252435E2CD009C1D42 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C0117F242435E2CD009C1D42 /* .gitignore */; };
 		C0AB34D0240524F900948850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB34CF240524F900948850 /* AppDelegate.swift */; };
 		C0AB34D2240524F900948850 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB34D1240524F900948850 /* ViewController.swift */; };
 		C0AB34D5240524F900948850 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0AB34D3240524F900948850 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		C0117EF3241E5E2F009C1D42 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0117EF5241E5E79009C1D42 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C0117EF7241EB0BB009C1D42 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
+		C0117F242435E2CD009C1D42 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C0AB34CC240524F900948850 /* DiscussIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscussIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0AB34CF240524F900948850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0AB34D1240524F900948850 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,9 +76,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C0117F212435C3BE009C1D42 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				C0117F242435E2CD009C1D42 /* .gitignore */,
+			);
+			path = Git;
+			sourceTree = "<group>";
+		};
 		C0AB34C3240524F900948850 = {
 			isa = PBXGroup;
 			children = (
+				C0117F212435C3BE009C1D42 /* Git */,
 				C0AB34CE240524F900948850 /* DiscussIt */,
 				C0AB34CD240524F900948850 /* Products */,
 				C52CC9B858E9D70E0C80AB80 /* Pods */,
@@ -187,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0117F252435E2CD009C1D42 /* .gitignore in Resources */,
 				C0117EF22416C855009C1D42 /* GoogleService-Info.plist in Resources */,
 				C0AB34DA240524FE00948850 /* LaunchScreen.storyboard in Resources */,
 				C0AB34D7240524FE00948850 /* Assets.xcassets in Resources */,

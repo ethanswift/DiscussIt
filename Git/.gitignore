@@ -4,9 +4,9 @@
 
 ### Swift ###
 # Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# for the sake of testing 
 ## Build generated
 build/
 DerivedData/

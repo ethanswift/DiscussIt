@@ -3,10 +3,13 @@
 # Edit at https://www.gitignore.io/?templates=xcode,swift
 
 ### Swift ###
+
 # Xcode
 
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-# for the sake of testing 
+
+# for the sake of testing
+185.51.200.2
 ## Build generated
 build/
 DerivedData/

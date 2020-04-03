@@ -84,6 +84,16 @@
 			path = Git;
 			sourceTree = "<group>";
 		};
+		C0117F2624372356009C1D42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0AB34E324087D0F00948850 /* User.swift */,
+				C0AB34E524087D8F00948850 /* Message.swift */,
+				C0AB34F1240E479100948850 /* Work.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C0AB34C3240524F900948850 = {
 			isa = PBXGroup;
 			children = (
@@ -120,9 +130,7 @@
 				C0AB34E12406869A00948850 /* ChatViewController.swift */,
 				C0AB34D6240524FE00948850 /* Assets.xcassets */,
 				C0AB34D8240524FE00948850 /* LaunchScreen.storyboard */,
-				C0AB34E324087D0F00948850 /* User.swift */,
-				C0AB34E524087D8F00948850 /* Message.swift */,
-				C0AB34F1240E479100948850 /* Work.swift */,
+				C0117F2624372356009C1D42 /* Model */,
 				C0AB34DB240524FE00948850 /* Info.plist */,
 				C0117EF12416C855009C1D42 /* GoogleService-Info.plist */,
 			);

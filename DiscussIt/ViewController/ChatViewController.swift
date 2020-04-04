@@ -128,8 +128,16 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         return messageList[indexPath.section]
     }
     
+    func avatarPosition(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> AvatarPosition {
+        return AvatarPosition(horizontal: .cellTrailing, vertical: .cellBottom)
+    }
+    
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
-        return MessageStyle.bubbleTailOutline(#colorLiteral(red: 0.926155746, green: 0.9410773516, blue: 0.9455420375, alpha: 1), .bottomLeft, .pointedEdge)
+        return .bubbleTail(.topLeft, .pointedEdge)
+    }
+    
+    func isFromCurrentSender(message: MessageType) -> Bool {
+        return false
     }
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {

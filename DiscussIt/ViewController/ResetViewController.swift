@@ -22,7 +22,6 @@ class ResetViewController: UIViewController {
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
     }
-    
 
     /*
     // MARK: - Navigation

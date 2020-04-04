@@ -94,6 +94,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C072DEDC2437328500C6DB25 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C0117EF7241EB0BB009C1D42 /* ResetViewController.swift */,
+				C0117EF5241E5E79009C1D42 /* SignUpViewController.swift */,
+				C0117EF3241E5E2F009C1D42 /* LoginViewController.swift */,
+				C0AB34EF240D0E3B00948850 /* BoardTableViewController.swift */,
+				C0AB34ED240C4D2D00948850 /* SearchViewController.swift */,
+				C0117EEF2415694C009C1D42 /* WebViewController.swift */,
+				C0AB34EB240C3E9500948850 /* ResultsTableViewController.swift */,
+				C0AB34E72409970F00948850 /* WorkViewController.swift */,
+				C0AB34E12406869A00948850 /* ChatViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		C0AB34C3240524F900948850 = {
 			isa = PBXGroup;
 			children = (
@@ -119,15 +135,7 @@
 				C0AB34CF240524F900948850 /* AppDelegate.swift */,
 				C0AB34D1240524F900948850 /* ViewController.swift */,
 				C0AB34D3240524F900948850 /* Main.storyboard */,
-				C0117EF7241EB0BB009C1D42 /* ResetViewController.swift */,
-				C0117EF5241E5E79009C1D42 /* SignUpViewController.swift */,
-				C0117EF3241E5E2F009C1D42 /* LoginViewController.swift */,
-				C0AB34EF240D0E3B00948850 /* BoardTableViewController.swift */,
-				C0AB34ED240C4D2D00948850 /* SearchViewController.swift */,
-				C0117EEF2415694C009C1D42 /* WebViewController.swift */,
-				C0AB34EB240C3E9500948850 /* ResultsTableViewController.swift */,
-				C0AB34E72409970F00948850 /* WorkViewController.swift */,
-				C0AB34E12406869A00948850 /* ChatViewController.swift */,
+				C072DEDC2437328500C6DB25 /* ViewController */,
 				C0AB34D6240524FE00948850 /* Assets.xcassets */,
 				C0AB34D8240524FE00948850 /* LaunchScreen.storyboard */,
 				C0117F2624372356009C1D42 /* Model */,

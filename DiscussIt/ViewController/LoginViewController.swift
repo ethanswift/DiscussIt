@@ -20,6 +20,9 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var forgotPasswordButton: UIButton!
+    
+    @IBOutlet weak var loginGuestButton: UIButton!
+    
 
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -68,6 +71,11 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
     @IBAction func signUpPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "goToSignUp", sender: self)
     }
+    
+    @IBAction func loginGuestPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToTabBar", sender: self)
+    }
+    
     
     // MARK: - Navigation
 

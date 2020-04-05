@@ -25,8 +25,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         self.tabBarController?.tabBar.backgroundImage = UIImage()
         self.tabBarController?.tabBar.shadowImage = UIImage()
         self.tabBarController?.tabBar.backgroundColor = #colorLiteral(red: 0.9262443185, green: 0.9611316323, blue: 0.9974778295, alpha: 1)
-//        self.tabBarItem.
-//        UITabBarItem.appearance().setTitleTextAttributes(<#T##attributes: [NSAttributedString.Key : Any]?##[NSAttributedString.Key : Any]?#>, for: <#T##UIControl.State#>)
+//        self.tabBarController?.
+//        UITabBarItem.appearance().setTitleTextAttributes([:], for: .normal)
 //        self.tabBarController?.tabBar.
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -60,6 +60,21 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if error != nil || data == nil {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Internet Connection Failed", message: "Your Internet Connection Was Failed, Please Try Again", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                print("Client error" , error?.localizedDescription)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server Error!")
+                return
+            }
+            
             do {
                 guard let json = try? JSON(data: data!) else {return}
                 let items = json["message"]["items"].arrayValue

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ResetViewController: UIViewController {
     
@@ -16,11 +17,21 @@ class ResetViewController: UIViewController {
     
         override func viewDidLoad() {
         super.viewDidLoad()
+            
+        resetButton.layer.cornerRadius = 15
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
+        Auth.auth().sendPasswordReset(withEmail: emailBar.text!) { (error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            }
+            let alert = UIAlertController(title: "Email Sent", message: "An Email Has Been Sent, Please Check Your Email And Reset Your Password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     /*

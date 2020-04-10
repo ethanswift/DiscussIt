@@ -11,8 +11,6 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController, UISearchBarDelegate {
     
-//    var authUser = Auth.auth().currentUser
-    
     @IBOutlet weak var userName: UISearchBar!
     
     @IBOutlet weak var password: UISearchBar!
@@ -23,15 +21,31 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var loginGuestButton: UIButton!
     
-
     @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+ 
+        
         userName.delegate = self
         password.delegate = self
+        
+        loginButton.layer.cornerRadius = 15
+        loginGuestButton.layer.cornerRadius = 15
+        signUpButton.layer.cornerRadius = 15
+        
+
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+//        Auth.auth().addStateDidChangeListener { (auth, user) in
+//            if user != nil {
+//                // user is signed in go to tab bar controller
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")
+//                self.present(vc!, animated: true, completion: nil)
+//            }
+//        }
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {

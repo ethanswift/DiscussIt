@@ -14,6 +14,7 @@
 		C0117EF6241E5E79009C1D42 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0117EF5241E5E79009C1D42 /* SignUpViewController.swift */; };
 		C0117EF8241EB0BB009C1D42 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0117EF7241EB0BB009C1D42 /* ResetViewController.swift */; };
 		C0117F252435E2CD009C1D42 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C0117F242435E2CD009C1D42 /* .gitignore */; };
+		C072DEDE24404CC400C6DB25 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C072DEDD24404CC400C6DB25 /* AboutViewController.swift */; };
 		C0AB34D0240524F900948850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB34CF240524F900948850 /* AppDelegate.swift */; };
 		C0AB34D2240524F900948850 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB34D1240524F900948850 /* ViewController.swift */; };
 		C0AB34D5240524F900948850 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0AB34D3240524F900948850 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		C0117EF5241E5E79009C1D42 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C0117EF7241EB0BB009C1D42 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		C0117F242435E2CD009C1D42 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C072DEDD24404CC400C6DB25 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C0AB34CC240524F900948850 /* DiscussIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscussIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0AB34CF240524F900948850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0AB34D1240524F900948850 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				C0117EF7241EB0BB009C1D42 /* ResetViewController.swift */,
+				C072DEDD24404CC400C6DB25 /* AboutViewController.swift */,
 				C0117EF5241E5E79009C1D42 /* SignUpViewController.swift */,
 				C0117EF3241E5E2F009C1D42 /* LoginViewController.swift */,
 				C0AB34EF240D0E3B00948850 /* BoardTableViewController.swift */,
@@ -274,6 +277,7 @@
 				C0117EF4241E5E2F009C1D42 /* LoginViewController.swift in Sources */,
 				C0AB34F0240D0E3B00948850 /* BoardTableViewController.swift in Sources */,
 				C0117EF02415694C009C1D42 /* WebViewController.swift in Sources */,
+				C072DEDE24404CC400C6DB25 /* AboutViewController.swift in Sources */,
 				C0AB34E424087D0F00948850 /* User.swift in Sources */,
 				C0AB34F2240E479100948850 /* Work.swift in Sources */,
 				C0AB34EC240C3E9500948850 /* ResultsTableViewController.swift in Sources */,

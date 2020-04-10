@@ -10,6 +10,7 @@ import UIKit
 import MessageKit
 import InputBarAccessoryView
 import FirebaseFirestore
+import FirebaseAuth
 
 class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
     
@@ -51,7 +52,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
             // get Messages from firestore
             let newDB = self.db.collection("works").document(self.ref)
             let chatDB = newDB.collection(self.boardName)
-            chatDB.order(by: "date", descending: true).getDocuments(completion: { (querySnapshot, error) in
+            chatDB.order(by: "date", descending: false).getDocuments(completion: { (querySnapshot, error) in
                 if error != nil {
                     print(error!)
                 } else {
@@ -163,19 +164,28 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         return nil
     }
     
+    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 20
+    }
+    
+    func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 20
+    }
+    
     func cellBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         
         return NSAttributedString(string: "Read", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
     }
     
     func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-        let name = message.sender.displayName
+        let thisMessage = messageList[indexPath.section]
+        let name = thisMessage.user.displayName
         return NSAttributedString(string: name, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption1)])
     }
     
     func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         
-        let dateString = formatter.string(from: message.sentDate)
+        let dateString = formatter.string(from: messageList[indexPath.section].sentDate)
         return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
     }
     
@@ -266,9 +276,11 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
     
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         
-        let user = User(senderId: "Me", displayName: "Me")
+        let fUser = Auth.auth().currentUser
         
-        saveMessages(text: text, boardName: self.boardName, docRefNum: self.ref, userId: user.senderId, userName: user.displayName)
+        let thisUser = User(senderId: fUser?.uid ?? "Guest", displayName: fUser?.displayName ?? "Anonymous")
+        
+        saveMessages(text: text, boardName: self.boardName, docRefNum: self.ref, userId: thisUser.senderId, userName: thisUser.displayName)
  
         messageInputBar.inputTextView.text = String()
         messageInputBar.invalidatePlugins()

@@ -9,13 +9,12 @@
 import UIKit
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UISearchBarDelegate {
     
-//    var authUser = Auth.auth().currentUser
+    var authUser = Auth.auth().currentUser
     
     @IBOutlet weak var displayName: UISearchBar!
-    
-    
+
     @IBOutlet weak var userName: UISearchBar!
     
     @IBOutlet weak var password: UISearchBar!
@@ -35,10 +34,30 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
+        if displayName.text == "" || userName.text == "" || password.text == "" {
+            signUpButton.isEnabled = false
+            signUpButton.titleLabel?.text = "Ooops! A Field Is Empty!!"
+        } else if (password.text?.count)! < 6 {
+            signUpButton.isEnabled = false
+            signUpButton.titleLabel?.text = "Ooops!"
+            password.backgroundColor = #colorLiteral(red: 0.8881979585, green: 0.3072378635, blue: 0.2069461644, alpha: 0.7102953767)
+            password.placeholder = "You Should Enter 6 Charachter Or More"
+        } else {
         if let email = userName.text, let password = password.text {
-            Auth.auth().createUser(withEmail: email, password: password) { (authDataResutl, err) in
+            Auth.auth().createUser(withEmail: email, password: password) { (resultUser, err) in
                 if err != nil {
                     print(err!.localizedDescription)
+                }
+                guard err != nil else {return}
+                guard resultUser != nil else {return}
+                if let authUser = Auth.auth().currentUser {
+                    let changeRequest = authUser.createProfileChangeRequest()
+                    changeRequest.displayName = self.displayName.text
+                    changeRequest.commitChanges(completion: { (error) in
+                        if error != nil {
+                            print(error!.localizedDescription)
+                        }
+                    })
                 }
                 let authUser = Auth.auth().currentUser
                 if authUser != nil && !authUser!.isEmailVerified {
@@ -55,12 +74,19 @@ class SignUpViewController: UIViewController {
                 }
             }
         }
+     }
     }
     
     @IBAction func backToLoginPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goBackToLoginFromSignUp", sender: self)
     }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        signUpButton.isEnabled = true
+        signUpButton.titleLabel?.text = "Sign Up"
+        password.backgroundColor = UIColor.clear
+        password.placeholder = "Password"
+    }
 
     /*
     // MARK: - Navigation

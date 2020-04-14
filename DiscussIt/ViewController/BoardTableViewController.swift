@@ -170,8 +170,12 @@ class BoardTableViewController: UITableViewController, UISearchBarDelegate {
                     let url = dataValue["url"] as! String
                     let issued = dataValue["issued"] as! String
                     let newBoardWork = Work(title: title, type: type, issued: issued, containerTitle: containerTitle, page: page, publisher: publisher, author: author, doi: doi, url: url)
-                    self.workArray.append(newBoardWork)
-                    self.tableView.reloadData()
+                    if !self.workArray.contains(where: { (work) -> Bool in
+                        return work.doi == newBoardWork.doi
+                    }) {
+                        self.workArray.append(newBoardWork)
+                        self.tableView.reloadData()
+                    }
                 }
             }
         }

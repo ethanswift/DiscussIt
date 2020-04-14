@@ -35,6 +35,8 @@ class WorkViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     var refrenceNumber: String = ""
     
+    var refNumTable: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -140,12 +142,12 @@ class WorkViewController: UIViewController, UITextFieldDelegate, UITableViewDele
                     let dataValue = document.data()
                         if let boardNameValue = dataValue["boardName"] as? String, let refValue = dataValue["documentId"] as? String {
                             self.boardNames.append(boardNameValue)
-                            self.refrenceNumber = refValue
+                            self.refNumTable.append(refValue)
+//                            self.refrenceNumber = refValue
                             print(self.boardNames)
                             print(self.refrenceNumber)
                             self.boardsTables.reloadData()
                         }
-                  
                     }
                 }
             }
@@ -170,7 +172,8 @@ class WorkViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             print(selectedRow!)
             print("ref and baordName: ", refrenceNumber, boardNames[selectedRow!])
             vc.boardName = boardNames[selectedRow!]
-            vc.ref = refrenceNumber
+            vc.ref = refNumTable[selectedRow!]
+//            vc.ref = refrenceNumber
         }
     }
 }

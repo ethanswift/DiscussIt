@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SVProgressHUD
 
 class SearchViewController: UIViewController, UISearchBarDelegate {
     
@@ -31,6 +32,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9365637898, green: 0.9386104941, blue: 0.956056416, alpha: 1)
         self.navigationController?.navigationBar.backItem?.backBarButtonItem?.tintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         let barHeight = UIApplication.shared.statusBarFrame.size.height + (self.navigationController?.navigationBar.frame.size.height ?? 0.0)
+        
+        SVProgressHUD.setBackgroundColor(UIColor.clear)
+        SVProgressHUD.setRingRadius(15)
+        
         searchBar.delegate = self
         searchBar.barTintColor = UIColor.white
         searchLabel.frame = CGRect(x: 0 , y: barHeight, width: self.view.bounds.width, height: self.view.bounds.height / 2 - (barHeight + 28))
@@ -44,6 +49,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("search bar text: \(searchBar.text ?? "no value")")
+        SVProgressHUD.show()
         DispatchQueue.main.async {
             self.searchAPI(text: searchBar.text!)
         }
@@ -59,6 +65,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error != nil || data == nil {
                 DispatchQueue.main.async {
+                    SVProgressHUD.dismiss()
                     let alert = UIAlertController(title: "Internet Connection Failed", message: "Your Internet Connection Was Failed, Please Try Again", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
@@ -66,7 +73,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                 print("Client error" , error?.localizedDescription)
                 return
             }
-            
+    
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server Error!")
                 return
@@ -97,6 +104,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                     }
                     DispatchQueue.main.async {
                         if error == nil && data != nil {
+                            SVProgressHUD.dismiss()
                             self.performSegue(withIdentifier: "goToResults", sender: self)
                         }
                     }

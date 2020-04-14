@@ -12,4 +12,5 @@ target 'DiscussIt' do
     pod 'SwiftyJSON', '~> 4.0'
     pod 'Firebase/Analytics'
     pod 'Firebase/Auth'
+    pod 'SVProgressHUD'
 end

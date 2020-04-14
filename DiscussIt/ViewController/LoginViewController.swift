@@ -33,17 +33,16 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
         loginGuestButton.layer.cornerRadius = 15
         signUpButton.layer.cornerRadius = 15
         
-
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-//        Auth.auth().addStateDidChangeListener { (auth, user) in
-//            if user != nil {
-//                // user is signed in go to tab bar controller
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//        }
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                // user is signed in go to tab bar controller
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")
+                self.present(vc!, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {

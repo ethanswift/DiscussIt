@@ -13,16 +13,23 @@ class SignUpViewController: UIViewController {
     
 //    var authUser = Auth.auth().currentUser
     
+    @IBOutlet weak var displayName: UISearchBar!
+    
+    
     @IBOutlet weak var userName: UISearchBar!
     
     @IBOutlet weak var password: UISearchBar!
     
     @IBOutlet weak var signUpButton: UIButton!
     
+    @IBOutlet weak var backToLoginButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         signUpButton.layer.cornerRadius = 15
+        backToLoginButton.layer.cornerRadius = 15
 
         // Do any additional setup after loading the view.
     }
@@ -49,6 +56,11 @@ class SignUpViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func backToLoginPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goBackToLoginFromSignUp", sender: self)
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -15,10 +15,15 @@ class ResetViewController: UIViewController {
     
     @IBOutlet weak var resetButton: UIButton!
     
+    @IBOutlet weak var backToLoginButton: UIButton!
+    
+    
         override func viewDidLoad() {
         super.viewDidLoad()
             
         resetButton.layer.cornerRadius = 15
+            backToLoginButton.layer.cornerRadius = 15
+        
 
         // Do any additional setup after loading the view.
     }
@@ -33,6 +38,11 @@ class ResetViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func backToLoginPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "goBackToLoginFromReset", sender: self)
+    }
+    
 
     /*
     // MARK: - Navigation

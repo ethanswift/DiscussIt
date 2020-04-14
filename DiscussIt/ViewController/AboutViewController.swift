@@ -19,6 +19,7 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
         
         logOutButton.layer.cornerRadius = 15
+        descriptionLabel.layer.cornerRadius = 15
         
         descriptionLabel.text = "This is an app to enhance your ability to search for academic content and specifically investigating scholarly articles. You're going to get connected to CrossRef search engine and look into ?? articles which are available. If interested, you can open one and start a discussion forum with your colleagues or classmates and talk about it in detail."
 

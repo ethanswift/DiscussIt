@@ -25,9 +25,7 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
  
-        
         userName.delegate = self
         password.delegate = self
         
@@ -59,8 +57,8 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
                 let authUser = Auth.auth().currentUser
                 if authUser != nil && !authUser!.isEmailVerified {
                     // user is available but their email is not verified
-                    // alert with an option to resent email verification
-                    let alert = UIAlertController(title: "Email Is Not Verified", message: "Your Email Is Not Verified", preferredStyle: .alert)
+                    // alert with an option to resend email verification
+                    let alert = UIAlertController(title: "Email Is Not Verified", message: "Please Check Your Email And Verify Your Account", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Resend", style: .default, handler: { (action) in
                         let authUser = Auth.auth().currentUser
                         authUser?.sendEmailVerification(completion: { (err) in
@@ -72,7 +70,6 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
                     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
-//               self.present(self.tabBarController!, animated: true, completion: nil)
                 self.performSegue(withIdentifier: "goToTabBar", sender: self)
             }
         }
@@ -90,16 +87,10 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
         performSegue(withIdentifier: "goToTabBar", sender: self)
     }
     
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToReset" {
-            let vc = segue.destination as! ResetViewController
-        } else if segue.identifier == "goToSignUp" {
-            let vc = segue.destination as! SignUpViewController
-        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }

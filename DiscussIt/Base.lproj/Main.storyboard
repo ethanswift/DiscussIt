@@ -672,7 +672,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gff-EX-N1E">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gff-EX-N1E">
                                 <rect key="frame" x="16" y="276" width="343" height="200"/>
                                 <color key="backgroundColor" red="0.1725741029" green="0.21834245320000001" blue="0.44677489999999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -682,7 +682,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L8a-ej-r00">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luanchScreen " translatesAutoresizingMaskIntoConstraints="NO" id="L8a-ej-r00">
                                 <rect key="frame" x="16" y="60" width="343" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="IAv-1C-Dxb"/>
@@ -729,6 +729,9 @@
             <point key="canvasLocation" x="5021.6000000000004" y="1347.9760119940031"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="luanchScreen " width="2480" height="3508"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IW8-P9-Hf3"/>
         <segue reference="rki-PC-kfX"/>

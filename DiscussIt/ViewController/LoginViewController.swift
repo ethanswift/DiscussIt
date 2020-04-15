@@ -35,6 +35,7 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
         
         // Do any additional setup after loading the view.
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
@@ -93,5 +94,4 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-
 }

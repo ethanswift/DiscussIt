@@ -20,7 +20,7 @@ DiscussIt is an app for students and university professors who are looking for i
 
 ## Article Search Engine
 
-[ Crossref ] (https://www.crossref.org/) 
+[Crossref](https://www.crossref.org) 
 
 ## Getting Started
 
@@ -28,6 +28,7 @@ In order to get started, fork the project and clone it to your local machine. In
 
 ## Frameworks And Libraries 
 
-* [MessageKit] (https://github.com/MessageKit/MessageKit)
-* [Firebase] (https://firebase.google.com/)
-* [SwiftyJSON] (https://github.com/SwiftyJSON/SwiftyJSON)
+* [MessageKit](https://github.com/MessageKit/MessageKit)
+* [Firebase](https://firebase.google.com)
+* [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+

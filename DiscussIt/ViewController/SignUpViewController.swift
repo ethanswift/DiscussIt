@@ -23,7 +23,6 @@ class SignUpViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var backToLoginButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

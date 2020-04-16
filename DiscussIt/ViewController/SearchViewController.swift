@@ -25,7 +25,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         self.tabBarController?.tabBar.backgroundImage = UIImage()
         self.tabBarController?.tabBar.shadowImage = UIImage()
-        self.tabBarController?.tabBar.backgroundColor = #colorLiteral(red: 0.9262443185, green: 0.9611316323, blue: 0.9974778295, alpha: 1)
+        self.tabBarController?.tabBar.backgroundColor = #colorLiteral(red: 0.2040559649, green: 0.7372421622, blue: 0.6007294059, alpha: 1)
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

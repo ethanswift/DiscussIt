@@ -12,7 +12,7 @@ An Open Source App to search for scholarly articles, choose the one you're looki
 
 ## Some Pages
 
-<img src="https://user-images.githubusercontent.com/60321318/79040162-c3310980-7bfb-11ea-8eee-23b257c91649.png" width="280"> <img src="https://user-images.githubusercontent.com/60321318/79040155-b3b1c080-7bfb-11ea-8a7c-23d5ef519dfa.png" width="280"><img src="https://user-images.githubusercontent.com/60321318/79040262-96c9bd00-7bfc-11ea-9cc7-8b9ade40f984.png" width="280"> 
+ <img src="https://user-images.githubusercontent.com/60321318/79543345-8903b400-80a2-11ea-9dc1-860dbdcd42f1.png" width="250"><img src="https://user-images.githubusercontent.com/60321318/79543349-8a34e100-80a2-11ea-9046-e0c0303bfe1d.png" width="250"><img src="https://user-images.githubusercontent.com/60321318/79543351-8bfea480-80a2-11ea-81af-543881f08a89.png" width="250"><img src="https://user-images.githubusercontent.com/60321318/79544025-9a998b80-80a3-11ea-81e7-0fcdee17b3a9.png" width="250">
 
 ## Goals and What You Can Do 
 

@@ -152,9 +152,68 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        let avatar = Avatar(image: #imageLiteral(resourceName: "Image"), initials: "AB")
+        let user = messageList[indexPath.section].user.displayName
+        let letter = user.lowercased().first
+        var image = UIImage()
+        switch letter {
+        case "a":
+            image = #imageLiteral(resourceName: "a")
+        case "b":
+            image = #imageLiteral(resourceName: "b")
+        case "c":
+            image = #imageLiteral(resourceName: "c")
+        case "d":
+            image = #imageLiteral(resourceName: "d")
+        case "e":
+            image = #imageLiteral(resourceName: "e")
+        case "f":
+            image = #imageLiteral(resourceName: "f")
+        case "g":
+            image = #imageLiteral(resourceName: "g")
+        case "h":
+            image = #imageLiteral(resourceName: "h")
+        case "i":
+            image = #imageLiteral(resourceName: "i")
+        case "j":
+            image = #imageLiteral(resourceName: "j")
+        case "k":
+            image = #imageLiteral(resourceName: "k")
+        case "l":
+            image = #imageLiteral(resourceName: "l")
+        case "m":
+            image = #imageLiteral(resourceName: "m")
+        case "n":
+            image = #imageLiteral(resourceName: "n")
+        case "o":
+            image = #imageLiteral(resourceName: "o")
+        case "p":
+            image = #imageLiteral(resourceName: "p")
+        case "q":
+            image = #imageLiteral(resourceName: "q")
+        case "r":
+            image = #imageLiteral(resourceName: "r")
+        case "s":
+            image = #imageLiteral(resourceName: "s")
+        case "t":
+            image = #imageLiteral(resourceName: "t")
+        case "u":
+            image = #imageLiteral(resourceName: "u")
+        case "v":
+            image = #imageLiteral(resourceName: "v")
+        case "w":
+            image = #imageLiteral(resourceName: "w")
+        case "x":
+            image = #imageLiteral(resourceName: "x")
+        case "y":
+            image = #imageLiteral(resourceName: "y")
+        case "z":
+            image = #imageLiteral(resourceName: "z")
+        default:
+            image = #imageLiteral(resourceName: "a")
+        }
+        let avatar = Avatar(image: image, initials: "AB")
         avatarView.set(avatar: avatar)
-        avatarView.backgroundColor = UIColor.white
+        avatarView.backgroundColor = #colorLiteral(red: 0.926155746, green: 0.9410773516, blue: 0.9455420375, alpha: 1)
     }
     
     func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {

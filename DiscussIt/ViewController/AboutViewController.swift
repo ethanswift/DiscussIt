@@ -8,12 +8,16 @@
 
 import UIKit
 import FirebaseAuth
+import SVProgressHUD
 
 class AboutViewController: UIViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var logOutButton: UIButton!
+    
+    @IBOutlet weak var aboutImage: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,19 +26,25 @@ class AboutViewController: UIViewController {
         descriptionLabel.layer.cornerRadius = 15
         descriptionLabel.layer.masksToBounds = true
         
+        aboutImage.layer.cornerRadius = 15
+        aboutImage.layer.masksToBounds = true
+        
         descriptionLabel.text = "This is an app to enhance your ability to search for academic content and specifically investigating scholarly articles. You're going to get connected to CrossRef search engine and look into ?? articles which are available. If interested, you can open one and start a discussion forum with your colleagues or classmates and talk about it in detail."
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func logOutPressed(_ sender: Any) {
+        SVProgressHUD.show()
         if Auth.auth().currentUser != nil {
             do {
                 try Auth.auth().signOut()
             } catch {
                 print(error)
             }
+            SVProgressHUD.dismiss()
             // perform segue to login page
+            performSegue(withIdentifier: "goBackToLoginFromLogOut", sender: self)
         }
     }
     

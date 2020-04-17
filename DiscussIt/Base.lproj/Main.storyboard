@@ -492,7 +492,7 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WBQ-43-J4c">
                                 <rect key="frame" x="8" y="405" width="359" height="139"/>
-                                <color key="backgroundColor" red="0.92624431848526001" green="0.96113163232803345" blue="0.99747782945632935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.66902792450000004" green="0.73128575090000003" blue="0.9488992691" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boardsCell" id="XUi-aY-sjW">
                                         <rect key="frame" x="0.0" y="28" width="359" height="44"/>
@@ -682,7 +682,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luanchScreen " translatesAutoresizingMaskIntoConstraints="NO" id="L8a-ej-r00">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aboutImage" translatesAutoresizingMaskIntoConstraints="NO" id="L8a-ej-r00">
                                 <rect key="frame" x="16" y="60" width="343" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="IAv-1C-Dxb"/>
@@ -702,7 +702,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="WQf-kc-yHc" firstAttribute="trailing" secondItem="gff-EX-N1E" secondAttribute="trailing" constant="16" id="4AJ-Km-3vA"/>
                             <constraint firstItem="WQf-kc-yHc" firstAttribute="trailing" secondItem="Hw9-be-fQr" secondAttribute="trailing" constant="16" id="7A4-qv-W5e"/>
@@ -720,22 +720,24 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="z6I-zW-SId"/>
                     <connections>
+                        <outlet property="aboutImage" destination="L8a-ej-r00" id="hD3-E1-Edr"/>
                         <outlet property="descriptionLabel" destination="gff-EX-N1E" id="4Hh-pe-Yzo"/>
                         <outlet property="logOutButton" destination="Hw9-be-fQr" id="yTo-S0-Div"/>
+                        <segue destination="iyX-kw-RhD" kind="show" identifier="goBackToLoginFromLogOut" id="2rp-Y5-0Ze"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2a-UC-GIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5021.6000000000004" y="1347.9760119940031"/>
+            <point key="canvasLocation" x="4145" y="1401"/>
         </scene>
     </scenes>
     <resources>
-        <image name="luanchScreen " width="2480" height="3508"/>
+        <image name="aboutImage" width="2480" height="1661"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IW8-P9-Hf3"/>
         <segue reference="rki-PC-kfX"/>
         <segue reference="VDb-8w-jRF"/>
-        <segue reference="6Y7-hg-dgK"/>
+        <segue reference="2rp-Y5-0Ze"/>
     </inferredMetricsTieBreakers>
 </document>

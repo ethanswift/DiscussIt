@@ -50,11 +50,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     // MARK: - search bar delegate methods
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
         print("search bar text: \(searchBar.text ?? "no value")")
         SVProgressHUD.show()
         DispatchQueue.main.async {
             self.searchAPI(text: searchBar.text!)
         }
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
     
     // MARK: - retrieve data from api

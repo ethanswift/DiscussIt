@@ -87,6 +87,16 @@ class LoginViewController: UIViewController, UISearchBarDelegate {
         performSegue(withIdentifier: "goToTabBar", sender: self)
     }
     
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        userName.resignFirstResponder()
+        password.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        userName.endEditing(true)
+        password.endEditing(true)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

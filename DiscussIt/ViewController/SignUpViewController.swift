@@ -85,6 +85,9 @@ class SignUpViewController: UIViewController, UISearchBarDelegate {
         signUpButton.titleLabel?.text = "Sign Up"
         password.backgroundColor = UIColor.clear
         password.placeholder = "Password"
+        displayName.endEditing(true)
+        userName.endEditing(true)
+        password.endEditing(true)
     }
 
     /*
